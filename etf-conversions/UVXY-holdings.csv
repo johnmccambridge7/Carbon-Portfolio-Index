@@ -1,0 +1,15 @@
+UVXY: ProShares Ultra VIX Short-Term Futures ETF
+Inception Date: 2011-10-03
+Fund Holdings as of: 2020-09-25
+Total Assets Under Management (in thousands):	1215400
+Shares Outstanding: 84228000
+Expense Ratio: 0.95%
+Tracks This Index: S&P 500 VIX SHORT-TERM FUTURES  TR (150%)
+ETF Database Category: Leveraged Volatility
+Issuer: ProShares
+Structure: Commodity Pool
+ETF Home Page: https://etfdb.com/etf/UVXY
+
+
+Holding,Symbol,Weighting
+CBOE Volatility Index (VIX) Futures,UX,100.0%
