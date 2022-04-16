@@ -1,0 +1,10 @@
+Summary data collected by the Greenhouse Gas Reporting Program for 2020,,,,,,,,,,,,
+This data was reported to EPA by facilities as of 08/07/2021,,,,,,,,,,,,
+All emissions data is presented in units of metric tons of carbon dioxide equivalent using GWP's from IPCC's AR4 (see FAQs tab),,,,,,,,,,,,
+Facility Id,FRS Id,Facility Name,City,State,Zip Code,Address,County,Latitude,Longitude,Primary NAICS Code,Industry Type (subparts),Total Mass of CO2 Sequestered
+1005661,110050297936,Archer Daniels Midland Co.,DECATUR,IL,62521,4666 FARIES PARKWAY,Macon,39.8675,-88.8850,311221,"C,II,PP,RR (RPT)",521581.4
+1010117,110055519363,Core Energy Otsego County EOR Operations,Gaylord,MI,49735,597 Kubacki Road,OTSEGO COUNTY,45.033842,-84.511469,211120,"RR (RPT),W-ONSH",213515.2
+1011767,110070082145,Denver Unit,Denver City,TX,79323,2611 State Hwy 214,YOAKUM COUNTY,33.00338,-102.81901,211120,RR (RPT),2812135.3
+1012121,110070209537,Hobbs Field,Hobbs,NM,88240,1017 West Stanolind Road,LEA COUNTY,32.68204,-103.14912,211120,RR (RPT),2138919.2
+1010975,110057067926,North Burbank Unit,Webb City,OK,74652,,OSAGE COUNTY,36.82491,-96.73257,211120,RR (RPT),"660,309.6"
+1002150,110028046629,Shute Creek Facility,KEMMERER,WY,83101,,LINCOLN COUNTY,41.887,-110.09446,211130,"C,PP,RR (RPT),W-PROC",418418.3
