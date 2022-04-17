@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useMemo, useReducer, useState } from "react";
+
 import {
   StyleSheet,
   View,
@@ -14,6 +15,7 @@ import {
   TextInput,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import MapView, { Marker } from 'react-native-maps';
 import { generateState } from "../lib/data";
 import { COLORS, TYPE } from "../lib/theme";
 import {
@@ -25,10 +27,21 @@ import {
   PortfolioStats,
 } from "../lib/types";
 import { Queue, Stack } from "react-native-spacing-system";
+import { Dimensions } from "react-native";
 import { useFonts } from "expo-font";
 import { TONS_TO_KG, T_TO_GT } from "../lib/constants";
 import { round } from "../lib/utils";
 import { StockRow } from "./stock";
+
+import {
+  LineChart,
+  BarChart,
+  PieChart,
+  ProgressChart,
+  ContributionGraph,
+  StackedBarChart
+} from "react-native-chart-kit";
+
 
 export function PortfolioScreen() {
   const [{ portfolio, funds, companies, industries, searchIndex }, dispatch] =
@@ -90,6 +103,69 @@ export function PortfolioScreen() {
     const results = searchIndex.search(searchQuery);
     return results;
   }, [searchQuery]);
+
+  const screenWidth = Dimensions.get("window").width;
+  const data = [
+    {
+      name: "Power Plants",
+      population: 21500000,
+      color: "rgba(131, 167, 234, 1)",
+      legendFontColor: "#7F7F7F",
+      legendFontSize: 10
+    },
+    {
+      name: "Chemicals",
+      population: 2800000,
+      color: "#F00",
+      legendFontColor: "#7F7F7F",
+      legendFontSize: 10
+    },
+    {
+      name: "Metals",
+      population: 527612,
+      color: "red",
+      legendFontColor: "#7F7F7F",
+      legendFontSize: 10
+    },
+    {
+      name: "Petroleum",
+      population: 8538000,
+      color: "orange",
+      legendFontColor: "#7F7F7F",
+      legendFontSize: 10
+    },
+    {
+      name: "Natural Gas",
+      population: 11920000,
+      color: "rgb(0, 0, 255)",
+      legendFontColor: "#7F7F7F",
+      legendFontSize: 10
+    }
+  ];
+
+  
+  let facilityMarkers = []; 
+
+  if (!!openedStock) {
+    facilityMarkers.push()
+    companies[openedStock].facilities.forEach(facility => {
+      facilityMarkers.push(<Marker coordinate = {{latitude: facility.latitude, longitude: facility.longitude}}
+      pinColor = {"purple"} // any color
+      title={`${facility.name} Facility`}
+      description={`${facility.name} is a subsidary of ${facility.name}`}/>);
+    });   
+  }
+
+  const chartConfig = {
+    backgroundGradientFrom: "#1E2923",
+    backgroundGradientFromOpacity: 0,
+    backgroundGradientTo: "#08130D",
+    backgroundGradientToOpacity: 0.5,
+    color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
+    strokeWidth: 2, // optional, default 3
+    barPercentage: 0.5,
+    useShadowColorFromDataset: false // optional
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -186,9 +262,7 @@ export function PortfolioScreen() {
                   justifyContent: "space-between",
                 }}
               >
-                <Text style={{ ...TYPE.bold, flex: 1 }}>
-                  {companies[openedStock].symbol}
-                </Text>
+                <Image style={{ width: 50, height: 50, borderRadius: 10 }} source={{ uri: "https://logo.clearbit.com/kelloggs.com"}} />
                 <Pressable style={{}} onPress={() => openStock(undefined)}>
                   <Ionicons name="ios-close" size={24} />
                 </Pressable>
@@ -197,7 +271,29 @@ export function PortfolioScreen() {
               <Text style={{ ...TYPE.bold, fontSize: 24 }}>
                 {companies[openedStock].name}
               </Text>
-              {true && (
+              <PieChart
+              data={data}
+              width={screenWidth - 50}
+              height={175}
+              chartConfig={chartConfig}
+              accessor={"population"}
+              backgroundColor={"transparent"}
+              center={[0, 10]}
+              />
+          
+              <View>
+                <MapView
+                  initialRegion={{
+                    latitude: companies[openedStock].facilities[0].latitude,
+                    longitude: companies[openedStock].facilities[0].longitude,
+                    latitudeDelta: 0.0922,
+                    longitudeDelta: 0.0421,
+                  }}
+                  style={styles.map}>
+                  { facilityMarkers }
+              </MapView>   
+              </View>           
+                {true && (
                 <Image
                   source={require("../assets/images/nature.png")}
                   style={{
@@ -305,6 +401,8 @@ export function PortfolioScreen() {
   );
 }
 
+const screenWidth = Dimensions.get("window").width;
+
 const styles = StyleSheet.create({
   container: {},
   scroll: {
@@ -338,4 +436,15 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   centeredView: {},
+  map: {
+    borderRadius: 20,
+    marginTop: 20,
+    width: screenWidth - 50,
+    height: 250,
+  },
+  picker: {
+    borderRadius: 20,
+    width: screenWidth,
+    height: 250,
+  }
 });

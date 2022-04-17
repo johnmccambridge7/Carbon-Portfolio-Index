@@ -1,6 +1,6 @@
 import { Pressable, Text, View } from "react-native";
 import { Stack } from "react-native-spacing-system";
-import { T_TO_GT } from "../lib/constants";
+import { T_TO_KT } from "../lib/constants";
 import { COLORS, TYPE } from "../lib/theme";
 import { Company, GHG } from "../lib/types";
 import { round } from "../lib/utils";
@@ -28,9 +28,9 @@ export const StockRow: React.FC<{
     <View style={{ alignItems: "flex-end" }}>
       <View style={{ flexDirection: "row", alignItems: "center" }}>
         <Text style={{ ...TYPE.regular, fontSize: 24 }}>
-          {round(company.emissions[GHG] * T_TO_GT, 1)}{" "}
+          {round(company.emissions[GHG] * T_TO_KT, 1)}{" "}
         </Text>
-        <Text style={{ ...TYPE.regular, fontSize: 14 }}>Gt/yr</Text>
+        <Text style={{ ...TYPE.regular, fontSize: 14 }}>Kt/yr</Text>
       </View>
     </View>
   </Pressable>
