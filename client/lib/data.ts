@@ -13,99 +13,6 @@ import FUNDS from "./funds.json";
 import FUND_LOGOS from "./fund-logos.json";
 import MiniSearch from "minisearch";
 
-// export const SAMPLE_PORTFOLIO: Portfolio = {
-//   AAPL: {
-//     symbol: "AAPL",
-//     quantity: 100,
-//     sharesOutstanding: 1_000_000_000,
-//     marketCap: 1_000_000_000_000,
-//     name: "Ardelle Ning",
-//     description:
-//       "Apple Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops, and sells consumer electronics, computer software, and online services.",
-//     industry: {
-//       name: "Technology",
-//     },
-//     emissions: {
-//       carbon: 37_560_000_000,
-//       methane: 16_200,
-//       nitrous: 5_400,
-//     },
-//     facilities: [],
-//   },
-//   MSFT: {
-//     symbol: "MSFT",
-//     quantity: 100,
-//     sharesOutstanding: 1_000_000_000,
-//     marketCap: 1_000_000_000_000,
-//     name: "Microsoft Corporation",
-//     description:
-//       "Microsoft Corporation is an American multinational technology company headquartered in Redmond, Washington, that develops, manufactures, licenses, supports and sells computer software, consumer electronics, personal computers, and related services.",
-//     industry: {
-//       name: "Technology",
-//     },
-//     emissions: {
-//       carbon: 230_000_000,
-//       methane: 16_200,
-//       nitrous: 5_400,
-//     },
-//     facilities: [],
-//   },
-//   ["3M"]: {
-//     symbol: "3M",
-//     quantity: 100,
-//     sharesOutstanding: 1_000_000_000,
-//     marketCap: 1_000_000_000_000,
-//     name: "3M Company",
-//     description:
-//       "3M Company is an American multinational corporation that manufactures and sells consumer electronics, office equipment, and plastic products.",
-//     industry: {
-//       name: "Industrials",
-//     },
-//     emissions: {
-//       carbon: 490_150_000_000,
-//       methane: 16_200,
-//       nitrous: 5_400,
-//     },
-//     facilities: [],
-//   },
-//   NKE: {
-//     symbol: "NKE",
-//     quantity: 100,
-//     sharesOutstanding: 1_000_000_000,
-//     marketCap: 1_000_000_000_000,
-//     name: "Nike, Inc.",
-//     description:
-//       "Nike, Inc. is an American multinational corporation that designs, manufactures, and sells athletic shoes, apparel, and equipment.",
-//     industry: {
-//       name: "Consumer Discretionary",
-//     },
-//     emissions: {
-//       carbon: 89_030_000_000,
-//       methane: 16_200,
-//       nitrous: 5_400,
-//     },
-//     facilities: [],
-//   },
-//   GE: {
-//     symbol: "GE",
-//     quantity: 100,
-//     sharesOutstanding: 1_000_000_000,
-//     marketCap: 1_000_000_000_000,
-//     name: "General Electric Company",
-//     description:
-//       "General Electric Company is an American multinational industrial company headquartered in Seattle, Washington, that generates, plants, transmits and distributes electricity and other electricity-related products.",
-//     industry: {
-//       name: "Industrials",
-//     },
-//     emissions: {
-//       carbon: 1_980_770_000_000,
-//       methane: 16_200,
-//       nitrous: 5_400,
-//     },
-//     facilities: [],
-//   },
-// };
-
 export const generateState = (): AppState => {
   const industries: Record<string, Industry> = {};
   const companies: Record<string, Company> = {};
@@ -134,6 +41,7 @@ export const generateState = (): AppState => {
       name: obj.facility,
       latitude,
       longitude,
+      industry: obj.industry.split(",")[0] || "Misc",
       emissions: {
         carbon,
         methane,
@@ -180,11 +88,14 @@ export const generateState = (): AppState => {
       logo: name in FUND_LOGOS ? FUND_LOGOS[name] : "",
     };
   });
-  // Object.entries(LOGOS).forEach(([companyName, logo]) => {
-  //   if (companyName in companies) {
-  //     companies[companyName].logo = logo;
-  //   }
-  // })
+  Object.entries(LOGOS).forEach(([companyName, logo]) => {
+    const isItInThere = Object.values(companies).find(
+      ({ name }) => name === companyName
+    );
+    if (!!isItInThere) {
+      isItInThere.logo = logo;
+    }
+  });
   const searchIndex = new MiniSearch<Company>({
     fields: ["symbol", "company", "industry"],
     storeFields: ["symbol"],
@@ -202,7 +113,13 @@ export const generateState = (): AppState => {
 
   return {
     portfolio: {
-      stocks: {},
+      stocks: {
+        PEP: 8700,
+        DOW: 32000,
+        TSLA: 100,
+        D: 800,
+        K: 500,
+      },
     },
     industries,
     companies,

@@ -192,7 +192,7 @@
     "sharesOutstanding": 184395848,
     "longitude": -93.29295,
     "latitude": 30.11837,
-    "industry": "Petroleum Product Suppliers,Petroleum and Natural Gas Systems",
+    "industry": "Natural Gas,Petroleum",
     "stake": 100
   },
   {
@@ -430,7 +430,7 @@
     "sharesOutstanding": 313929992,
     "longitude": -80.903362,
     "latitude": 39.256088,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -444,7 +444,7 @@
     "sharesOutstanding": 155296353,
     "longitude": -87.457407,
     "latitude": 33.528007,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -1438,7 +1438,7 @@
     "sharesOutstanding": 198448053,
     "longitude": -82.149605,
     "latitude": 37.738204,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -1690,7 +1690,7 @@
     "sharesOutstanding": 100530599,
     "longitude": -97.1685,
     "latitude": 34.6289,
-    "industry": "Chemicals,Petroleum Product Suppliers,Refineries",
+    "industry": "Chemicals,Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -1704,7 +1704,7 @@
     "sharesOutstanding": 100530599,
     "longitude": -95.606106,
     "latitude": 37.047556,
-    "industry": "Chemicals,Petroleum Product Suppliers,Refineries",
+    "industry": "Chemicals,Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -1816,7 +1816,7 @@
     "sharesOutstanding": 88320612,
     "longitude": -119.070556,
     "latitude": 35.3825,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -1830,7 +1830,7 @@
     "sharesOutstanding": 88320612,
     "longitude": -95.280179,
     "latitude": 32.362643,
-    "industry": "Petroleum Product Suppliers,Refineries",
+    "industry": "Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -1844,7 +1844,7 @@
     "sharesOutstanding": 88320612,
     "longitude": -101.417673,
     "latitude": 32.269104,
-    "industry": "Petroleum Product Suppliers,Refineries,Waste",
+    "industry": "Natural Gas,Refineries,Waste",
     "stake": 100
   },
   {
@@ -1858,7 +1858,7 @@
     "sharesOutstanding": 88320612,
     "longitude": -91.748383,
     "latitude": 30.526504,
-    "industry": "Petroleum Product Suppliers,Refineries",
+    "industry": "Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -1872,7 +1872,7 @@
     "sharesOutstanding": 88320612,
     "longitude": -92.675095,
     "latitude": 33.200091,
-    "industry": "Chemicals,Petroleum Product Suppliers,Refineries",
+    "industry": "Chemicals,Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -2054,7 +2054,7 @@
     "sharesOutstanding": 810673901,
     "longitude": -79.9285,
     "latitude": 33.0163,
-    "industry": "Petroleum and Natural Gas Systems,Power Plants",
+    "industry": "Petroleum,Power Plants",
     "stake": 100
   },
   {
@@ -2180,7 +2180,7 @@
     "sharesOutstanding": 810673901,
     "longitude": -81.465,
     "latitude": 40.86417,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -2194,7 +2194,7 @@
     "sharesOutstanding": 810673901,
     "longitude": -110.9802,
     "latitude": 39.6533,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -2208,7 +2208,7 @@
     "sharesOutstanding": 810673901,
     "longitude": -109.2136,
     "latitude": 40.9917,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -2292,7 +2292,7 @@
     "sharesOutstanding": 810673901,
     "longitude": -76.41233,
     "latitude": 38.38407,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -2306,7 +2306,7 @@
     "sharesOutstanding": 810673901,
     "longitude": -109.3128,
     "latitude": 41.5222,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -2390,7 +2390,7 @@
     "sharesOutstanding": 810673901,
     "longitude": -81.68192,
     "latitude": 40.94229,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -2432,7 +2432,7 @@
     "sharesOutstanding": 810673901,
     "longitude": -80.87397,
     "latitude": 39.834,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -2502,7 +2502,7 @@
     "sharesOutstanding": 810673901,
     "longitude": -109.3322,
     "latitude": 40.5682,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -2516,7 +2516,7 @@
     "sharesOutstanding": 810673901,
     "longitude": -111.464628,
     "latitude": 39.819611,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -2600,7 +2600,7 @@
     "sharesOutstanding": 735085853,
     "longitude": -95.3549,
     "latitude": 28.9792,
-    "industry": "Chemicals,Other,Petroleum and Natural Gas Systems,Waste",
+    "industry": "Chemicals,Other,Petroleum,Waste",
     "stake": 100
   },
   {
@@ -2712,7 +2712,7 @@
     "sharesOutstanding": 735085853,
     "longitude": -91.106768,
     "latitude": 30.010358,
-    "industry": "Natural Gas and Natural Gas Liquids Suppliers,Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 50
   },
   {
@@ -3426,7 +3426,7 @@
     "sharesOutstanding": 1454781055,
     "longitude": -90.9289,
     "latitude": 29.6257,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 0.39
   },
   {
@@ -3468,7 +3468,7 @@
     "sharesOutstanding": 1454781055,
     "longitude": -91.03843,
     "latitude": 30.21232,
-    "industry": "Natural Gas and Natural Gas Liquids Suppliers,Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 0.39
   },
   {
@@ -3832,7 +3832,7 @@
     "sharesOutstanding": 24201747,
     "longitude": -86.225313,
     "latitude": 39.781162,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -4378,7 +4378,7 @@
     "sharesOutstanding": 558574459,
     "longitude": -87.7222,
     "latitude": 39,
-    "industry": "Petroleum Product Suppliers,Refineries",
+    "industry": "Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -4392,7 +4392,7 @@
     "sharesOutstanding": 558574459,
     "longitude": -93.002139,
     "latitude": 44.850583,
-    "industry": "Chemicals,Petroleum Product Suppliers,Refineries",
+    "industry": "Chemicals,Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -4406,7 +4406,7 @@
     "sharesOutstanding": 558574459,
     "longitude": -90.59353,
     "latitude": 30.06132,
-    "industry": "Petroleum Product Suppliers,Refineries",
+    "industry": "Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -4420,7 +4420,7 @@
     "sharesOutstanding": 558574459,
     "longitude": -108.425,
     "latitude": 35.490278,
-    "industry": "Petroleum Product Suppliers,Refineries",
+    "industry": "Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -4434,7 +4434,7 @@
     "sharesOutstanding": 558574459,
     "longitude": -106.41426,
     "latitude": 31.76945,
-    "industry": "Chemicals,Petroleum Product Suppliers,Refineries",
+    "industry": "Chemicals,Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -4462,7 +4462,7 @@
     "sharesOutstanding": 558574459,
     "longitude": -110.048865,
     "latitude": 41.554684,
-    "industry": "Natural Gas and Natural Gas Liquids Suppliers,Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -4476,7 +4476,7 @@
     "sharesOutstanding": 558574459,
     "longitude": -81.4146,
     "latitude": 40.7736,
-    "industry": "Petroleum Product Suppliers,Refineries",
+    "industry": "Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -4490,7 +4490,7 @@
     "sharesOutstanding": 558574459,
     "longitude": -94.9328,
     "latitude": 29.3775,
-    "industry": "Petroleum Product Suppliers,Power Plants,Refineries",
+    "industry": "Natural Gas,Power Plants,Refineries",
     "stake": 100
   },
   {
@@ -4504,7 +4504,7 @@
     "sharesOutstanding": 558574459,
     "longitude": -100.88083,
     "latitude": 46.85055,
-    "industry": "Petroleum Product Suppliers,Refineries",
+    "industry": "Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -4546,7 +4546,7 @@
     "sharesOutstanding": 558574459,
     "longitude": -83.1527,
     "latitude": 42.2841,
-    "industry": "Petroleum Product Suppliers,Refineries",
+    "industry": "Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -4602,7 +4602,7 @@
     "sharesOutstanding": 558574459,
     "longitude": -151.367204,
     "latitude": 60.683603,
-    "industry": "Chemicals,Petroleum and Natural Gas Systems,Refineries",
+    "industry": "Chemicals,Petroleum,Refineries",
     "stake": 100
   },
   {
@@ -4616,7 +4616,7 @@
     "sharesOutstanding": 558574459,
     "longitude": -82.6042,
     "latitude": 38.375,
-    "industry": "Petroleum Product Suppliers,Refineries",
+    "industry": "Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -4644,7 +4644,7 @@
     "sharesOutstanding": 558574459,
     "longitude": -103.215,
     "latitude": 46.86071,
-    "industry": "Natural Gas and Natural Gas Liquids Suppliers,Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -4658,7 +4658,7 @@
     "sharesOutstanding": 558574459,
     "longitude": -102.35364,
     "latitude": 48.031634,
-    "industry": "Natural Gas and Natural Gas Liquids Suppliers,Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -4672,7 +4672,7 @@
     "sharesOutstanding": 558574459,
     "longitude": -102.4288062,
     "latitude": 48.3271267,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -4686,7 +4686,7 @@
     "sharesOutstanding": 558574459,
     "longitude": -108.76154,
     "latitude": 41.05872,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -4700,7 +4700,7 @@
     "sharesOutstanding": 558574459,
     "longitude": -109.45371,
     "latitude": 40.036269,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -4714,7 +4714,7 @@
     "sharesOutstanding": 558574459,
     "longitude": -102.9482,
     "latitude": 47.087672,
-    "industry": "Chemicals,Petroleum Product Suppliers,Refineries",
+    "industry": "Chemicals,Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -4896,7 +4896,7 @@
     "sharesOutstanding": 203350740,
     "longitude": -104.42021,
     "latitude": 46.61179,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -4910,7 +4910,7 @@
     "sharesOutstanding": 203350740,
     "longitude": -103.87361,
     "latitude": 47.929722,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -5484,7 +5484,7 @@
     "sharesOutstanding": 1964439781,
     "longitude": -95.36387,
     "latitude": 29.76003,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -6226,7 +6226,7 @@
     "sharesOutstanding": 60158209,
     "longitude": -104.21486,
     "latitude": 43.85126,
-    "industry": "Petroleum Product Suppliers,Refineries",
+    "industry": "Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -6254,7 +6254,7 @@
     "sharesOutstanding": 60158209,
     "longitude": -122.395259,
     "latitude": 47.257694,
-    "industry": "Petroleum Product Suppliers,Refineries",
+    "industry": "Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -6478,7 +6478,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -89.980833,
     "latitude": 29.68,
-    "industry": "Petroleum Product Suppliers,Refineries",
+    "industry": "Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -6492,7 +6492,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -97.0895,
     "latitude": 36.6821,
-    "industry": "Chemicals,Petroleum Product Suppliers,Refineries",
+    "industry": "Chemicals,Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -6506,7 +6506,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -118.2431,
     "latitude": 33.8048,
-    "industry": "Chemicals,Petroleum Product Suppliers,Refineries,Suppliers of CO2",
+    "industry": "Chemicals,Natural Gas,Refineries,Suppliers of CO2",
     "stake": 100
   },
   {
@@ -6520,7 +6520,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -91.744148,
     "latitude": 39.234933,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 25
   },
   {
@@ -6534,7 +6534,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -108.190306,
     "latitude": 41.750585,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 25
   },
   {
@@ -6548,7 +6548,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -86.85381,
     "latitude": 39.75982,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 25
   },
   {
@@ -6562,7 +6562,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -89.270344,
     "latitude": 39.711329,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 25
   },
   {
@@ -6590,7 +6590,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -97.833056,
     "latitude": 38.3775,
-    "industry": "Natural Gas and Natural Gas Liquids Suppliers,Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 40
   },
   {
@@ -6604,7 +6604,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -99.478382,
     "latitude": 40.5087,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 25
   },
   {
@@ -6618,7 +6618,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -96.8968,
     "latitude": 40.01646,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 25
   },
   {
@@ -6632,7 +6632,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -106.11105,
     "latitude": 41.682318,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 25
   },
   {
@@ -6646,7 +6646,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -108.290437,
     "latitude": 39.891773,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 25
   },
   {
@@ -6660,7 +6660,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -107.787979,
     "latitude": 41.718603,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 25
   },
   {
@@ -6674,7 +6674,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -74.2199,
     "latitude": 40.6365,
-    "industry": "Chemicals,Petroleum Product Suppliers,Refineries",
+    "industry": "Chemicals,Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -6688,7 +6688,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -94.917719,
     "latitude": 29.854291,
-    "industry": "Natural Gas and Natural Gas Liquids Suppliers,Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 22.5
   },
   {
@@ -6702,7 +6702,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -94.890932,
     "latitude": 29.848405,
-    "industry": "Natural Gas and Natural Gas Liquids Suppliers,Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 10
   },
   {
@@ -6716,7 +6716,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -95.750363,
     "latitude": 29.070847,
-    "industry": "Petroleum Product Suppliers,Refineries",
+    "industry": "Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -6730,7 +6730,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -93.274386,
     "latitude": 30.242155,
-    "industry": "Petroleum Product Suppliers,Refineries",
+    "industry": "Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -6744,7 +6744,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -120.589722,
     "latitude": 35.038889,
-    "industry": "Petroleum Product Suppliers,Refineries",
+    "industry": "Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -6758,7 +6758,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -101.36305,
     "latitude": 35.70306,
-    "industry": "Chemicals,Petroleum Product Suppliers,Refineries,Waste",
+    "industry": "Chemicals,Natural Gas,Refineries,Waste",
     "stake": 100
   },
   {
@@ -6772,7 +6772,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -122.2532,
     "latitude": 38.0436,
-    "industry": "Chemicals,Petroleum Product Suppliers,Refineries",
+    "industry": "Chemicals,Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -6814,7 +6814,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -108.484444,
     "latitude": 45.776389,
-    "industry": "Chemicals,Petroleum Product Suppliers,Refineries",
+    "industry": "Chemicals,Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -6828,7 +6828,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -90.0675,
     "latitude": 38.8375,
-    "industry": "Chemicals,Petroleum Product Suppliers,Refineries,Suppliers of CO2,Waste",
+    "industry": "Chemicals,Natural Gas,Refineries,Suppliers of CO2,Waste",
     "stake": 100
   },
   {
@@ -6842,7 +6842,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -122.692114,
     "latitude": 48.830142,
-    "industry": "Petroleum Product Suppliers,Refineries",
+    "industry": "Natural Gas,Refineries",
     "stake": 100
   },
   {
@@ -6856,7 +6856,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -107.763621,
     "latitude": 40.768594,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 25
   },
   {
@@ -6870,7 +6870,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -81.94505,
     "latitude": 39.84253,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 25
   },
   {
@@ -6884,7 +6884,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -81.246047,
     "latitude": 39.938246,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 25
   },
   {
@@ -6898,7 +6898,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -95.7510678,
     "latitude": 29.0739546,
-    "industry": "Natural Gas and Natural Gas Liquids Suppliers,Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -6912,7 +6912,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -82.871729,
     "latitude": 39.714011,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 25
   },
   {
@@ -6926,7 +6926,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -83.321499,
     "latitude": 39.477944,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 25
   },
   {
@@ -6940,7 +6940,7 @@
     "sharesOutstanding": 481086327,
     "longitude": -85.8895551,
     "latitude": 38.9572194,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 25
   },
   {
@@ -7640,7 +7640,7 @@
     "sharesOutstanding": 315772021,
     "longitude": -93.33638,
     "latitude": 30.03898,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -7654,7 +7654,7 @@
     "sharesOutstanding": 2167373090,
     "longitude": -93.33638,
     "latitude": 30.03898,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -7668,7 +7668,7 @@
     "sharesOutstanding": 315772021,
     "longitude": -93.33256394,
     "latitude": 30.36718304,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -7682,7 +7682,7 @@
     "sharesOutstanding": 2167373090,
     "longitude": -93.33256394,
     "latitude": 30.36718304,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -7850,7 +7850,7 @@
     "sharesOutstanding": 82519003,
     "longitude": -88.09172006,
     "latitude": 29.06062965,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -7864,7 +7864,7 @@
     "sharesOutstanding": 82519003,
     "longitude": -88.62598209,
     "latitude": 28.97303233,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -7878,7 +7878,7 @@
     "sharesOutstanding": 82519003,
     "longitude": -91.1085,
     "latitude": 27.7297,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -7892,7 +7892,7 @@
     "sharesOutstanding": 82519003,
     "longitude": -88.93079054,
     "latitude": 28.86467752,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -7906,7 +7906,7 @@
     "sharesOutstanding": 82519003,
     "longitude": -90.828387,
     "latitude": 28.861279,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -7920,7 +7920,7 @@
     "sharesOutstanding": 82519003,
     "longitude": -92.96392415,
     "latitude": 27.93867412,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -7934,7 +7934,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -98.7673,
     "latitude": 36.6526,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -7948,7 +7948,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -101.911987,
     "latitude": 31.502598,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 73
   },
   {
@@ -7962,7 +7962,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -92.069312,
     "latitude": 29.89734,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 0.84
   },
   {
@@ -7976,7 +7976,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -95.36783,
     "latitude": 29.75815,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -7990,7 +7990,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -100.90793,
     "latitude": 31.18509,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8004,7 +8004,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -93.156944,
     "latitude": 30.273333,
-    "industry": "Natural Gas and Natural Gas Liquids Suppliers,Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8018,7 +8018,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -97.883523,
     "latitude": 33.305465,
-    "industry": "Natural Gas and Natural Gas Liquids Suppliers,Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8032,7 +8032,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -102.640277,
     "latitude": 31.501667,
-    "industry": "Injection of CO2,Petroleum and Natural Gas Systems,Suppliers of CO2",
+    "industry": "Injection of CO2,Petroleum,Suppliers of CO2",
     "stake": 100
   },
   {
@@ -8046,7 +8046,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -93.637778,
     "latitude": 29.765,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8060,7 +8060,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -95.21040211,
     "latitude": 29.74133721,
-    "industry": "Petroleum Product Suppliers,Petroleum and Natural Gas Systems",
+    "industry": "Natural Gas,Petroleum",
     "stake": 100
   },
   {
@@ -8074,7 +8074,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -96.287956,
     "latitude": 34.586443,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 60
   },
   {
@@ -8088,7 +8088,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -95.36783,
     "latitude": 29.75815,
-    "industry": "Natural Gas and Natural Gas Liquids Suppliers,Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8102,7 +8102,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -93.347778,
     "latitude": 30.158611,
-    "industry": "Natural Gas and Natural Gas Liquids Suppliers,Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8116,7 +8116,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -94.917719,
     "latitude": 29.854291,
-    "industry": "Natural Gas and Natural Gas Liquids Suppliers,Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 38.75
   },
   {
@@ -8130,7 +8130,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -95.36753,
     "latitude": 29.75853,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8144,7 +8144,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -103.311944,
     "latitude": 32.610278,
-    "industry": "Injection of CO2,Natural Gas and Natural Gas Liquids Suppliers,Petroleum and Natural Gas Systems,Suppliers of CO2",
+    "industry": "Injection of CO2,Petroleum,Suppliers of CO2",
     "stake": 100
   },
   {
@@ -8158,7 +8158,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -90.9289,
     "latitude": 29.6257,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 4.75
   },
   {
@@ -8172,7 +8172,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -101.797218,
     "latitude": 31.33556,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 73
   },
   {
@@ -8186,7 +8186,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -95.36783,
     "latitude": 29.75815,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8200,7 +8200,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -89.38555,
     "latitude": 29.23632,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8214,7 +8214,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -91.03843,
     "latitude": 30.21232,
-    "industry": "Natural Gas and Natural Gas Liquids Suppliers,Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 4.75
   },
   {
@@ -8228,7 +8228,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -103.148564,
     "latitude": 32.42615,
-    "industry": "Injection of CO2,Petroleum and Natural Gas Systems,Suppliers of CO2",
+    "industry": "Injection of CO2,Petroleum,Suppliers of CO2",
     "stake": 100
   },
   {
@@ -8242,7 +8242,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -97.6905,
     "latitude": 34.4615,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8256,7 +8256,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -101.911987,
     "latitude": 31.502598,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 73
   },
   {
@@ -8270,7 +8270,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -97.856385,
     "latitude": 28.555548,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8284,7 +8284,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -96.288,
     "latitude": 34.5864,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8298,7 +8298,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -97.526777,
     "latitude": 33.31093,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8312,7 +8312,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -101.790614,
     "latitude": 31.853619,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8326,7 +8326,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -103.26179,
     "latitude": 47.69404,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8340,7 +8340,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -101.843305,
     "latitude": 31.632682,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 73
   },
   {
@@ -8354,7 +8354,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -101.8015688,
     "latitude": 32.1309623,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 73
   },
   {
@@ -8494,7 +8494,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -103.6594267,
     "latitude": 31.81881,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8508,7 +8508,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -99.255954,
     "latitude": 28.407351,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8522,7 +8522,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -103.241229,
     "latitude": 31.805233,
-    "industry": "Injection of CO2,Petroleum and Natural Gas Systems,Suppliers of CO2",
+    "industry": "Injection of CO2,Petroleum,Suppliers of CO2",
     "stake": 100
   },
   {
@@ -8536,7 +8536,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -96.134662,
     "latitude": 34.911552,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 60
   },
   {
@@ -8550,7 +8550,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -103.067545,
     "latitude": 31.242421,
-    "industry": "Injection of CO2,Petroleum and Natural Gas Systems,Suppliers of CO2",
+    "industry": "Injection of CO2,Petroleum,Suppliers of CO2",
     "stake": 100
   },
   {
@@ -8564,7 +8564,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -104.065,
     "latitude": 31.9816,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8578,7 +8578,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -103.065294,
     "latitude": 31.26859901,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 25
   },
   {
@@ -8592,7 +8592,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -103.9087898,
     "latitude": 31.82555074,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -8606,7 +8606,7 @@
     "sharesOutstanding": 228486051,
     "longitude": -101.6320355,
     "latitude": 31.64463037,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {
@@ -9558,7 +9558,7 @@
     "sharesOutstanding": 315434531,
     "longitude": -88.415332,
     "latitude": 40.284429,
-    "industry": "Petroleum and Natural Gas Systems",
+    "industry": "Petroleum",
     "stake": 100
   },
   {

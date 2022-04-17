@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import { useEffect, useMemo, useReducer, useState } from "react";
-
+import { useCallback, useEffect, useMemo, useReducer, useState } from "react";
+import hsl from "hsl-to-hex";
 import {
   StyleSheet,
   View,
@@ -15,7 +15,7 @@ import {
   TextInput,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import MapView, { Marker } from 'react-native-maps';
+import MapView, { Marker, Polygon, Polyline } from "react-native-maps";
 import { generateState } from "../lib/data";
 import { COLORS, TYPE } from "../lib/theme";
 import {
@@ -29,7 +29,7 @@ import {
 import { Queue, Stack } from "react-native-spacing-system";
 import { Dimensions } from "react-native";
 import { useFonts } from "expo-font";
-import { TONS_TO_KG, T_TO_GT } from "../lib/constants";
+import { TONS_TO_KG, T_TO_GT, T_TO_MT } from "../lib/constants";
 import { round } from "../lib/utils";
 import { StockRow } from "./stock";
 
@@ -39,9 +39,8 @@ import {
   PieChart,
   ProgressChart,
   ContributionGraph,
-  StackedBarChart
+  StackedBarChart,
 } from "react-native-chart-kit";
-
 
 export function PortfolioScreen() {
   const [{ portfolio, funds, companies, industries, searchIndex }, dispatch] =
@@ -104,57 +103,24 @@ export function PortfolioScreen() {
     return results;
   }, [searchQuery]);
 
-  const screenWidth = Dimensions.get("window").width;
-  const data = [
-    {
-      name: "Power Plants",
-      population: 21500000,
-      color: "rgba(131, 167, 234, 1)",
-      legendFontColor: "#7F7F7F",
-      legendFontSize: 10
-    },
-    {
-      name: "Chemicals",
-      population: 2800000,
-      color: "#F00",
-      legendFontColor: "#7F7F7F",
-      legendFontSize: 10
-    },
-    {
-      name: "Metals",
-      population: 527612,
-      color: "red",
-      legendFontColor: "#7F7F7F",
-      legendFontSize: 10
-    },
-    {
-      name: "Petroleum",
-      population: 8538000,
-      color: "orange",
-      legendFontColor: "#7F7F7F",
-      legendFontSize: 10
-    },
-    {
-      name: "Natural Gas",
-      population: 11920000,
-      color: "rgb(0, 0, 255)",
-      legendFontColor: "#7F7F7F",
-      legendFontSize: 10
+  const collateIndustries = useCallback(() => {
+    if (!!openedStock) {
+      const collated: Record<string, number> = {};
+      companies[openedStock].facilities.forEach((facility) => {
+        if (facility.industry && facility.emissions) {
+          if (facility.industry in collated) {
+            collated[facility.industry] += facility.emissions.carbon;
+          } else {
+            collated[facility.industry] = facility.emissions.carbon;
+          }
+        }
+      });
+      return collated;
     }
-  ];
+    return null;
+  }, [companies, openedStock]);
 
-  
-  let facilityMarkers = []; 
-
-  if (!!openedStock) {
-    facilityMarkers.push()
-    companies[openedStock].facilities.forEach(facility => {
-      facilityMarkers.push(<Marker coordinate = {{latitude: facility.latitude, longitude: facility.longitude}}
-      pinColor = {"purple"} // any color
-      title={`${facility.name} Facility`}
-      description={`${facility.name} is a subsidary of ${facility.name}`}/>);
-    });   
-  }
+  const screenWidth = Dimensions.get("window").width;
 
   const chartConfig = {
     backgroundGradientFrom: "#1E2923",
@@ -164,15 +130,38 @@ export function PortfolioScreen() {
     color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
     strokeWidth: 2, // optional, default 3
     barPercentage: 0.5,
-    useShadowColorFromDataset: false // optional
+    useShadowColorFromDataset: false, // optional
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scroll}>
-        <Text style={{ ...TYPE.bold, fontSize: 32 }}>Portfolio</Text>
-        <Stack size={24}></Stack>
-        <View style={styles.scoreCard}>
+        {/* <Text style={{ ...TYPE.bold, fontSize: 32 }}>Portfolio</Text> */}
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Image
+            source={require("../assets/brand.png")}
+            style={{
+              width: 150,
+              height: 53,
+              resizeMode: "contain",
+              alignSelf: "flex-end",
+              marginLeft: -8,
+            }}
+          ></Image>
+          <Ionicons
+            name="ios-person-circle"
+            size={36}
+            color={COLORS.text}
+          ></Ionicons>
+        </View>
+        <Stack size={12}></Stack>
+        {/* <View style={styles.scoreCard}>
           <View>
             <Text style={{ ...styles.subtitle, alignSelf: "flex-end" }}>
               CO₂ emissions
@@ -210,9 +199,42 @@ export function PortfolioScreen() {
               of each dollar.
             </Text>
           </View>
+        </View> */}
+        <Text style={{ ...TYPE.regular, fontSize: 32 }}>Your portfolio's</Text>
+        <Stack size={8}></Stack>
+        <Text style={{ ...TYPE.regular, fontSize: 32 }}>
+          carbon footprint is
+        </Text>
+        <View style={{ flexDirection: "row", alignItems: "flex-end" }}>
+          <Text
+            style={{ ...TYPE.bold, fontSize: 48, color: COLORS.primaryDark }}
+          >
+            {round(portfolioStats.totalFootprint[GHG], 1).toLocaleString(
+              "en-US"
+            )}{" "}
+          </Text>
+          <Text style={{ ...TYPE.regular, fontSize: 32, marginBottom: 8 }}>
+            tons a year,
+          </Text>
         </View>
-        <Stack size={36}></Stack>
-        <View style={{}}>
+        <Text style={{ ...TYPE.regular, fontSize: 32 }}>and every dollar</Text>
+        <Stack size={8}></Stack>
+        <View style={{ flexDirection: "row", alignItems: "flex-end" }}>
+          <Text style={{ ...TYPE.regular, fontSize: 32 }}>adds</Text>
+          <Text style={{ ...TYPE.bold, fontSize: 36, color: COLORS.primary }}>
+            {" "}
+            {round(
+              portfolioStats.footprintPerDollar[GHG] * TONS_TO_KG,
+              2
+            ).toLocaleString("en-US")}{" "}
+          </Text>
+          <Text style={{ ...TYPE.regular, fontSize: 32 }}>kg.</Text>
+        </View>
+        <Text></Text>
+        <Stack size={24}></Stack>
+        <View
+          style={{ backgroundColor: "white", padding: 16, borderRadius: 16 }}
+        >
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Text
               style={{
@@ -223,12 +245,11 @@ export function PortfolioScreen() {
               Assets
             </Text>
             <Ionicons
-              name="add-circle"
+              name="ios-add-circle"
               size={24}
+              color={COLORS.primaryDark}
               onPress={() => setAddingStock(true)}
             ></Ionicons>
-            {/* <Button onPress={(e) => {}} title="+">
-              </Button> */}
           </View>
           <Stack size={24}></Stack>
           {Object.entries(portfolio.stocks).map(([symbol, quantity]) => {
@@ -262,7 +283,14 @@ export function PortfolioScreen() {
                   justifyContent: "space-between",
                 }}
               >
-                <Image style={{ width: 50, height: 50, borderRadius: 10 }} source={{ uri: "https://logo.clearbit.com/kelloggs.com"}} />
+                <Image
+                  style={{ width: 50, height: 50 }}
+                  source={{
+                    uri:
+                      companies[openedStock].logo ||
+                      "https://logo.clearbit.com/kelloggs.com",
+                  }}
+                />
                 <Pressable style={{}} onPress={() => openStock(undefined)}>
                   <Ionicons name="ios-close" size={24} />
                 </Pressable>
@@ -271,29 +299,140 @@ export function PortfolioScreen() {
               <Text style={{ ...TYPE.bold, fontSize: 24 }}>
                 {companies[openedStock].name}
               </Text>
-              <PieChart
-              data={data}
-              width={screenWidth - 50}
-              height={175}
-              chartConfig={chartConfig}
-              accessor={"population"}
-              backgroundColor={"transparent"}
-              center={[0, 10]}
-              />
-          
+              <Stack size={12}></Stack>
+              <Text>
+                Operating in the{" "}
+                {companies[openedStock].industries[0] || "public"} sector with a
+                current market cap of $
+                {companies[openedStock].marketCap.toLocaleString("en-US")}, the
+                carbon footprint of {companies[openedStock].name} was reported
+                by the EPA in 2020 as{" "}
+                {round(
+                  companies[openedStock].emissions[GHG] * T_TO_MT,
+                  1
+                ).toLocaleString("en-US")}{" "}
+                megatons of CO₂ per year. For investors, each dollar contributes
+                towards{" "}
+                {round(
+                  (companies[openedStock].emissions[GHG] * TONS_TO_KG) /
+                    companies[openedStock].marketCap,
+                  2
+                ).toLocaleString("en-US")}{" "}
+                kg of CO₂.
+              </Text>
+              <Stack size={12}></Stack>
+              <View
+                style={{ height: 1, backgroundColor: COLORS.grayLight }}
+              ></View>
+              <Stack size={12}></Stack>
+              <Text style={{ ...TYPE.regular }}>
+                For investors, each dollar contributes towards{" "}
+                {round(
+                  (companies[openedStock].emissions[GHG] * TONS_TO_KG) /
+                    companies[openedStock].marketCap,
+                  2
+                ).toLocaleString("en-US")}{" "}
+                kg of CO₂.
+              </Text>
+              {Object.keys(collateIndustries()).length >= 3 && (
+                <PieChart
+                  data={(() => {
+                    return Object.entries(collateIndustries())
+                      .map(([name, population], i) => ({
+                        name,
+                        population,
+                        color: hsl(
+                          174,
+                          75,
+                          100 - 60 * (Math.pow(9, -i) / Math.pow(10, -i))
+                        ),
+                        legendFontColor: "#7F7F7F",
+                        legendFontSize: 14,
+                      }))
+                      .filter((_, i) => i < 7);
+                  })()}
+                  width={screenWidth - 48}
+                  height={
+                    Math.min(companies[openedStock].facilities.length, 7) * 24
+                  }
+                  chartConfig={chartConfig}
+                  accessor={"population"}
+                  backgroundColor={"transparent"}
+                  center={[0, 10]}
+                />
+              )}
+
               <View>
                 <MapView
                   initialRegion={{
                     latitude: companies[openedStock].facilities[0].latitude,
                     longitude: companies[openedStock].facilities[0].longitude,
-                    latitudeDelta: 0.0922,
+                    latitudeDelta:
+                      Math.max(
+                        ...companies[openedStock].facilities.map(
+                          ({ latitude }) => latitude
+                        )
+                      ) -
+                      Math.min(
+                        ...companies[openedStock].facilities.map(
+                          ({ latitude }) => latitude
+                        )
+                      ),
                     longitudeDelta: 0.0421,
                   }}
-                  style={styles.map}>
-                  { facilityMarkers }
-              </MapView>   
-              </View>           
-                {true && (
+                  style={styles.map}
+                  provider="google"
+                >
+                  {companies[openedStock].facilities.map((facility) => {
+                    return (
+                      <>
+                        <Marker
+                          coordinate={{
+                            latitude: facility.latitude,
+                            longitude: facility.longitude,
+                          }}
+                          pinColor={"purple"} // any color
+                          title={`${facility.name} Facility`}
+                          description={`${facility.name} is a subsidary of ${companies[openedStock].symbol}`}
+                        >
+                          <Ionicons
+                            name="business"
+                            size={24}
+                            color={COLORS.primaryDark}
+                          ></Ionicons>
+                        </Marker>
+                        {companies[openedStock].facilities.map(
+                          (otherFacility) => (
+                            <Polyline
+                              coordinates={[
+                                {
+                                  latitude: facility.latitude,
+                                  longitude: facility.longitude,
+                                },
+                                {
+                                  latitude: otherFacility.latitude,
+                                  longitude: otherFacility.longitude,
+                                },
+                              ]}
+                              strokeColor={COLORS.primaryDark}
+                              strokeWidth={0.1}
+                            ></Polyline>
+                          )
+                        )}
+                      </>
+                    );
+                  })}
+                  {/* <Polygon
+                    coordinates={companies[openedStock].facilities.map(
+                      ({ latitude, longitude }) => ({ latitude, longitude })
+                    )}
+                    strokeColor="#F00"
+                    fillColor="#000"
+                    strokeWidth={2}
+                  /> */}
+                </MapView>
+              </View>
+              {true && (
                 <Image
                   source={require("../assets/images/nature.png")}
                   style={{
@@ -335,14 +474,11 @@ export function PortfolioScreen() {
                     ...TYPE.regular,
                     fontSize: 18,
                     padding: 8,
-                    borderBottomColor: COLORS.text,
-                    borderBottomWidth: 3,
+                    borderBottomColor: COLORS.grayLight,
+                    borderBottomWidth: 2,
                     flex: 1,
                   }}
-                >
-                  {/* <Ionicons name="ios-search" size={24} /> */}
-                  {/* <Queue size={12}></Queue> */}
-                </TextInput>
+                ></TextInput>
                 <Queue size={24}></Queue>
                 <Pressable
                   style={{}}
@@ -389,6 +525,7 @@ export function PortfolioScreen() {
                   style={{
                     alignSelf: "center",
                     width: "66%",
+                    height: 600,
                   }}
                   resizeMode="contain"
                 ></Image>
@@ -440,11 +577,11 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginTop: 20,
     width: screenWidth - 50,
-    height: 250,
+    height: 330,
   },
   picker: {
     borderRadius: 20,
     width: screenWidth,
     height: 250,
-  }
+  },
 });

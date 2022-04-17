@@ -22,10 +22,12 @@ export interface Company {
   marketCap: number;
   emissions: GHGs;
   facilities: Facility[];
+  logo?: string;
 }
 
 export interface Facility {
   name: string;
+  industry?: string;
   latitude: number;
   longitude: number;
   emissions: GHGs;

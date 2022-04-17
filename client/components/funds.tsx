@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { useEffect, useMemo, useReducer, useState } from "react";
+import { useCallback, useEffect, useMemo, useReducer, useState } from "react";
 import {
   StyleSheet,
   View,
@@ -29,6 +29,7 @@ import { useFonts } from "expo-font";
 import { TONS_TO_KG, T_TO_GT, T_TO_MT } from "../lib/constants";
 import { round } from "../lib/utils";
 import { StockRow } from "./stock";
+import hslToHex from "hsl-to-hex";
 
 export function FundsScreen() {
   const [{ portfolio, funds, companies, industries, searchIndex }, dispatch] =
@@ -51,34 +52,28 @@ export function FundsScreen() {
 
   const [GHG, setGHG] = useState<GHG>("carbon");
 
-  const portfolioStats: PortfolioStats = useMemo(() => {
-    const totalFootprint: GHGs = {
-      carbon: 0,
-      methane: 0,
-      nitrous: 0,
-    };
-    const dollars: GHGs = {
-      carbon: 0,
-      methane: 0,
-      nitrous: 0,
-    };
-    Object.entries(portfolio.stocks).forEach(([symbol, quantity]) => {
-      const company = companies[symbol];
-      const ownership = quantity / company.sharesOutstanding;
-      (["carbon", "methane", "nitrous"] as GHG[]).forEach((emission) => {
-        totalFootprint[emission] += company.emissions[emission] * ownership;
-        dollars[emission] += company.marketCap * ownership;
-      });
-    });
-    return {
-      totalFootprint,
-      footprintPerDollar: {
-        carbon: totalFootprint.carbon / dollars.carbon,
-        methane: totalFootprint.methane / dollars.methane,
-        nitrous: totalFootprint.nitrous / dollars.nitrous,
-      } as GHGs,
-    };
-  }, [portfolio]);
+  const fundBounds = useMemo(
+    () => ({
+      min: Math.min(
+        ...Object.values(funds).map(({ emissions }) => emissions[GHG])
+      ),
+      max: Math.max(
+        ...Object.values(funds).map(({ emissions }) => emissions[GHG])
+      ),
+    }),
+    [funds]
+  );
+
+  const getColor = useCallback(
+    (fund) => {
+      const { min, max } = fundBounds;
+      const { emissions } = fund;
+      const percent = (emissions[GHG] - min) / (max - min);
+      const hue = Math.round(percent * 140);
+      return hslToHex(140 - hue, 53, 53);
+    },
+    [funds]
+  );
 
   const [openedStock, openStock] = useState<string>();
 
@@ -100,50 +95,93 @@ export function FundsScreen() {
             <View
               key={fund.name}
               style={{
-                flexDirection: "row",
                 borderTopColor: COLORS.grayLight,
                 borderTopWidth: 1,
                 paddingVertical: 12,
               }}
             >
-              <View style={{ flex: 1 }}>
-                {!!fund.logo ? (
-                  <Image
-                    source={{
-                      uri: fund.logo,
-                    }}
-                    width={32}
-                    height={32}
-                    style={{
-                      width: 32,
-                      height: 32,
-                      borderRadius: 8,
-                    }}
-                  />
-                ) : (
-                  <Ionicons
-                    name="business"
-                    color={COLORS.primaryDark}
-                    size={32}
-                  ></Ionicons>
-                )}
-                <Text style={{ ...TYPE.regular, fontSize: 14 }}>
-                  {fund.name}
-                </Text>
-              </View>
-              <Queue size={24}></Queue>
-              <View style={{ justifyContent: "flex-end" }}>
-                <Text style={{ ...TYPE.bold, fontSize: 24 }}>
-                  {round(fund.emissions.carbon * T_TO_MT, 1).toLocaleString(
-                    "en-US"
+              <View
+                style={{
+                  flexDirection: "row",
+                }}
+              >
+                <View style={{ flex: 1 }}>
+                  {!!fund.logo ? (
+                    <Image
+                      source={{
+                        uri: fund.logo,
+                      }}
+                      width={32}
+                      height={32}
+                      style={{
+                        width: 32,
+                        height: 32,
+                        borderRadius: 8,
+                      }}
+                    />
+                  ) : (
+                    <Ionicons
+                      name="business"
+                      color={COLORS.primaryDark}
+                      size={32}
+                    ></Ionicons>
                   )}
-                  Mt/yr
-                </Text>
-                <Stack size={6}></Stack>
-                <Text style={{ ...TYPE.regular, fontSize: 18 }}>
-                  ${round(fund.aum * T_TO_GT, 0).toLocaleString("en-US")}B AUM
-                </Text>
+                  <Stack size={12}></Stack>
+                  <Text style={{ ...TYPE.bold, fontSize: 14 }}>
+                    {fund.name}
+                  </Text>
+                </View>
+                <Queue size={24}></Queue>
+                <View style={{ justifyContent: "flex-end" }}>
+                  <View style={{ flexDirection: "row", alignItems: "center" }}>
+                    <Text
+                      style={{
+                        ...TYPE.bold,
+                        fontSize: 24,
+                        color: getColor(fund),
+                      }}
+                    >
+                      {round(fund.emissions.carbon * T_TO_MT, 1).toLocaleString(
+                        "en-US"
+                      )}
+                    </Text>
+                    <Queue size={12}></Queue>
+                    <Text
+                      style={{
+                        ...TYPE.bold,
+                        fontSize: 14,
+                        color: getColor(fund),
+                      }}
+                    >
+                      Mt/yr
+                    </Text>
+                  </View>
+                  <Stack size={6}></Stack>
+                  <View
+                    style={{ flexDirection: "row", alignItems: "flex-end" }}
+                  >
+                    <Text style={{ ...TYPE.regular, fontSize: 18 }}>
+                      ${round(fund.aum * T_TO_GT, 0).toLocaleString("en-US")}
+                    </Text>
+                    <Text style={{ ...TYPE.regular, fontSize: 14 }}>B AUM</Text>
+                  </View>
+                </View>
               </View>
+              <Stack size={12}></Stack>
+              <Text
+                style={{
+                  ...TYPE.regular,
+                  overflow: "hidden",
+                  color: "gray",
+                  fontSize: 12,
+                }}
+              >
+                {Object.entries(fund.stocks)
+                  .sort((a, b) => b[1] - a[1])
+                  .filter((_, i) => i < 15)
+                  .map(([symbol, _]) => symbol)
+                  .join(", ")}
+              </Text>
             </View>
           );
         })}
