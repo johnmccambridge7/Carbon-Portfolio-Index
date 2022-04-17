@@ -14,6 +14,8 @@ import {
   TextInput,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import MapView from 'react-native-maps';
+import DonutChart from 'react-donut-chart';
 import { generateState } from "../lib/data";
 import { COLORS, TYPE } from "../lib/theme";
 import {
@@ -29,6 +31,7 @@ import { useFonts } from "expo-font";
 import { TONS_TO_KG, T_TO_GT } from "../lib/constants";
 import { round } from "../lib/utils";
 import { StockRow } from "./stock";
+import Pie from 'react-native-pie'
 
 export function PortfolioScreen() {
   const [{ portfolio, funds, companies, industries, searchIndex }, dispatch] =
@@ -197,6 +200,28 @@ export function PortfolioScreen() {
               <Text style={{ ...TYPE.bold, fontSize: 24 }}>
                 {companies[openedStock].name}
               </Text>
+              <Pie
+              radius={80}
+              sections={[
+                {
+                  percentage: 10,
+                  color: '#C70039',
+                },
+                {
+                  percentage: 20,
+                  color: '#44CD40',
+                },
+                {
+                  percentage: 30,
+                  color: '#404FCD',
+                },
+                {
+                  percentage: 40,
+                  color: '#EBD22F',
+                },
+              ]}
+              strokeCap={'butt'}
+            />
               {true && (
                 <Image
                   source={require("../assets/images/nature.png")}
