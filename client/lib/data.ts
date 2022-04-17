@@ -10,6 +10,7 @@ import {
 import RAW from "./data.json";
 import LOGOS from "./logos.json";
 import FUNDS from "./funds.json";
+import FUND_LOGOS from "./fund-logos.json";
 import MiniSearch from "minisearch";
 
 // export const SAMPLE_PORTFOLIO: Portfolio = {
@@ -108,11 +109,9 @@ import MiniSearch from "minisearch";
 export const generateState = (): AppState => {
   const industries: Record<string, Industry> = {};
   const companies: Record<string, Company> = {};
+  const funds: Record<string, Fund> = {};
   RAW.forEach((obj) => {
     const symbol = obj.symbol;
-    if (symbol === "PEP") {
-      console.log(obj);
-    }
     const partOfIndustries = obj.industry.split(",");
     partOfIndustries.forEach((industry) => {
       if (!(industry in industries)) {
@@ -162,7 +161,25 @@ export const generateState = (): AppState => {
       });
     }
   });
-  FUNDS.forEach(({ name, aum, stocks, emissions }) => {});
+
+  FUNDS.forEach(({ name, aum, stocks: rawStocks, emissions }) => {
+    const stocks: Record<string, number> = {};
+    Object.entries(rawStocks).forEach(([symbol, quantity]) => {
+      if (typeof quantity === "number") {
+        stocks[symbol] = quantity;
+      } else {
+        stocks[symbol] = 0;
+      }
+    });
+    funds[name] = {
+      name,
+      aum,
+      stocks,
+      emissions,
+      // @ts-ignore
+      logo: name in FUND_LOGOS ? FUND_LOGOS[name] : "",
+    };
+  });
   // Object.entries(LOGOS).forEach(([companyName, logo]) => {
   //   if (companyName in companies) {
   //     companies[companyName].logo = logo;
@@ -189,7 +206,7 @@ export const generateState = (): AppState => {
     },
     industries,
     companies,
-    funds: {},
+    funds,
     searchIndex,
   };
 };

@@ -231,7 +231,6 @@ export function PortfolioScreen() {
               >
                 <TextInput
                   onChangeText={(text) => {
-                    console.log(text);
                     setSearchQuery(text);
                   }}
                   autoFocus

@@ -26,7 +26,7 @@ import {
 } from "../lib/types";
 import { Queue, Stack } from "react-native-spacing-system";
 import { useFonts } from "expo-font";
-import { TONS_TO_KG, T_TO_GT } from "../lib/constants";
+import { TONS_TO_KG, T_TO_GT, T_TO_MT } from "../lib/constants";
 import { round } from "../lib/utils";
 import { StockRow } from "./stock";
 
@@ -49,7 +49,6 @@ export function FundsScreen() {
       }
     }, generateState());
 
-  const [page, setPage] = useState("PORTFOLIO");
   const [GHG, setGHG] = useState<GHG>("carbon");
 
   const portfolioStats: PortfolioStats = useMemo(() => {
@@ -96,6 +95,58 @@ export function FundsScreen() {
       <ScrollView style={styles.scroll}>
         <Text style={{ ...TYPE.bold, fontSize: 32 }}>Funds</Text>
         <Stack size={24}></Stack>
+        {Object.values(funds).map((fund) => {
+          return (
+            <View
+              key={fund.name}
+              style={{
+                flexDirection: "row",
+                borderTopColor: COLORS.grayLight,
+                borderTopWidth: 1,
+                paddingVertical: 12,
+              }}
+            >
+              <View style={{ flex: 1 }}>
+                {!!fund.logo ? (
+                  <Image
+                    source={{
+                      uri: fund.logo,
+                    }}
+                    width={32}
+                    height={32}
+                    style={{
+                      width: 32,
+                      height: 32,
+                      borderRadius: 8,
+                    }}
+                  />
+                ) : (
+                  <Ionicons
+                    name="business"
+                    color={COLORS.primaryDark}
+                    size={32}
+                  ></Ionicons>
+                )}
+                <Text style={{ ...TYPE.regular, fontSize: 14 }}>
+                  {fund.name}
+                </Text>
+              </View>
+              <Queue size={24}></Queue>
+              <View style={{ justifyContent: "flex-end" }}>
+                <Text style={{ ...TYPE.bold, fontSize: 24 }}>
+                  {round(fund.emissions.carbon * T_TO_MT, 1).toLocaleString(
+                    "en-US"
+                  )}
+                  Mt/yr
+                </Text>
+                <Stack size={6}></Stack>
+                <Text style={{ ...TYPE.regular, fontSize: 18 }}>
+                  ${round(fund.aum * T_TO_GT, 0).toLocaleString("en-US")}B AUM
+                </Text>
+              </View>
+            </View>
+          );
+        })}
         <StatusBar style="auto" />
         <Modal
           presentationStyle="pageSheet"
@@ -158,7 +209,6 @@ export function FundsScreen() {
               >
                 <TextInput
                   onChangeText={(text) => {
-                    console.log(text);
                     setSearchQuery(text);
                   }}
                   autoFocus

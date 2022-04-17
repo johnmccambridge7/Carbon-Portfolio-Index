@@ -40,6 +40,7 @@ export interface Fund {
   aum: number;
   stocks: Record<string, number>; // key is symbol, value is number of shares
   emissions: GHGs;
+  logo: string;
 }
 
 export interface AppState {
